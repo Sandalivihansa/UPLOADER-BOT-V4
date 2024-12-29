@@ -35,21 +35,21 @@ sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ
  
 """
     ABOUT_TEXT = """
-**Mʏ ɴᴀᴍᴇ** : [Uᴘʟᴏᴀᴅᴇʀ ʙᴏᴛ ᴠ4](https://t.me/UploadLinkToFileBot)
+**Mʏ ɴᴀᴍᴇ** : [𝐸𝑙𝑖𝑧𝑎𝑏𝑒𝑡𝒉](https://t.me/ElizabethTGram_bot)
 
-**Cʜᴀɴɴᴇʟ** : [NT Bᴏᴛs](https://t.me/NT_BOT_CHANNEL)
+**Cʜᴀɴɴᴇʟ** : [𝑆𝐿 𝑀𝑢𝑆𝑖𝑐](https://t.me/MusicOFHuB)
 
-**Sᴏᴜʀᴄᴇ** : [Cʟɪᴄᴋ ʜᴇʀᴇ](https://github.com/LISA-KOREA/UPLOADER-BOT-V4)
+**Sᴏᴜʀᴄᴇ** : [𝐶𝑙𝑖𝑐𝑘 𝐻𝑒𝑟𝑒](https://t.me/AboutDeWeNi/7)
 
-**Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ** : [NT Bᴏᴛs Sᴜᴘᴘᴏʀᴛ](https://t.me/NT_BOTS_SUPPORT)
+**Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ** : [𝑆𝐿 𝑀𝑢𝑆𝑖𝑐 𝑀𝑎𝑁𝑖𝑎](https://t.me/NT_BOTS_SUPPORT)
 
-**Dᴀᴛᴀʙᴀsᴇ** : [MᴏɴɢᴏDB](https://cloud.mongodb.com)
+**Dᴀᴛᴀʙᴀsᴇ** : [𝑀𝑜𝑁𝐺𝑜 𝐷𝐵](https://cloud.mongodb.com)
 
-**Lᴀɴɢᴜᴀɢᴇ :** [Pʏᴛʜᴏɴ 3.12.5](https://www.python.org/)
+**Lᴀɴɢᴜᴀɢᴇ :** [𝑃𝑦𝑡𝒉𝑜𝑛 3.12.4](https://www.python.org/)
 
-**Fʀᴀᴍᴇᴡᴏʀᴋ :** [Pʏʀᴏɢᴀᴍ 2.3.45](https://docs.pyrogram.org/)
+**Fʀᴀᴍᴇᴡᴏʀᴋ :** [𝑃𝑦𝑟𝑜𝑔𝑟𝑎𝑚 2.3.45](https://docs.pyrogram.org/)
 
-**Dᴇᴠᴇʟᴏᴘᴇʀ :** @LISA_FAN_LK
+**Dᴇᴠᴇʟᴏᴘᴇʀ :** [𝐷𝑒𝑊𝑒𝑁𝑖🇱🇰](https://t.me/deweni2)
 """
 
 
