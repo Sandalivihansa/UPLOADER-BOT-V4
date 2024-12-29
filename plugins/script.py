@@ -91,8 +91,6 @@ sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ
         InlineKeyboardButton('⛔️ ᴄʟᴏsᴇ', callback_data='close')
         ]]
     )
-    
-
     TEXT = "sᴇɴᴅ ᴍᴇ ᴀɴʏ ᴄᴜsᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ ᴛᴏ sᴇᴛ ɪᴛ"
     IFLONG_FILE_NAME = " Only 64 characters can be named . "
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
@@ -139,5 +137,4 @@ sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ
     FORCE_SUBSCRIBE_TEXT = "<code>Sorry Dear You Must Join My Updates Channel for using me 😌😉....</code>"
     BANNED_USER_TEXT = "<code>You are Banned!</code>"
     CHECK_LINK = "Pʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ ʟɪɴᴋ ⌛"
-
-
+    
