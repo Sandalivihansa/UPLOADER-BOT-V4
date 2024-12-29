@@ -1,37 +1,19 @@
-# Use an official Python runtime as a parent image
 FROM python:3.10-slim
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Update the package list and install required packages
+# Install necessary dependencies
 RUN apt-get update && \
     apt-get install -y ffmpeg git wget pv jq python3-dev mediainfo && \
     rm -rf /var/lib/apt/lists/*
 
-# Upgrade pip to the latest version
 RUN pip install --upgrade pip
 
-# Install the necessary Python packages
+# Install the required packages from requirements.txt
 COPY requirements.txt .
 RUN pip install -r requirements.txt --verbose
 
-# Force reinstall brotli
-RUN pip install --force-reinstall brotli
-
-# Install and upgrade yt-dlp
-RUN pip uninstall -y yt-dlp && \
-    pip install yt-dlp && \
-    pip install --upgrade yt-dlp
-
-# Copy the rest of the application code
+# Additional steps as necessary...
 COPY . .
 
-# Check the yt-dlp installation
-RUN python3 -m pip check yt-dlp
-
-# Verify yt-dlp version
-RUN yt-dlp --version
-
-# Run the application
 CMD ["python3", "bot.py"]
