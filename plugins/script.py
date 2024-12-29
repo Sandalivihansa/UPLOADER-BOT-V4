@@ -157,4 +157,6 @@ async def start(client, message):
     BANNED_USER_TEXT = "<code>You are Banned!</code>"
     CHECK_LINK = "Pʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ ʟɪɴᴋ ⌛"
 
+# Run the bot
+app.run()
 
