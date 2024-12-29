@@ -12,6 +12,8 @@ class Translation(object):
 Usᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ
 
 """
+    # Image link to display in the start message
+    START_IMAGE = "https://telegra.ph/file/ee7d75a552dd22796807f.jpg"
     HELP_TEXT = """
 ʟɪɴᴋ ᴛᴏ ᴍᴇᴅɪᴀ ᴏʀ ꜰɪʟᴇ
 
@@ -91,6 +93,16 @@ sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ
         InlineKeyboardButton('⛔️ ᴄʟᴏsᴇ', callback_data='close')
         ]]
     )
+    
+# In your bot's handler function (assumes you're using Pyrogram):
+async def start(client, message):
+    # Send image and text together
+    await message.reply_photo(
+        photo=Translation.START_IMAGE,
+        caption=Translation.START_TEXT.format(message.from_user.first_name),
+        reply_markup=Translation.START_BUTTONS
+    )    
+    
     TEXT = "sᴇɴᴅ ᴍᴇ ᴀɴʏ ᴄᴜsᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ ᴛᴏ sᴇᴛ ɪᴛ"
     IFLONG_FILE_NAME = " Only 64 characters can be named . "
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
