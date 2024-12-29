@@ -97,7 +97,10 @@ sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ
         ]]
     )
     
-@Client.on_message(filters.command("start"))
+# Initialize the Pyrogram Client
+app = Client("my_bot")
+
+@app.on_message(filters.command("start"))
 async def start(client, message):
     try:
     # Send image and text together
