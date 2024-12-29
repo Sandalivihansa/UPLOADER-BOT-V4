@@ -41,7 +41,7 @@ class Config(object):
     
     DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://smoka:smoka@cluster0.hyxdn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     
-    SESSION_NAME = os.environ.get("SESSION_NAME", "UploadLinkToFileBot")
+    SESSION_NAME = os.environ.get("SESSION_NAME", "fbfastdown_bot")
     
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002325247996"))
     
@@ -53,5 +53,5 @@ class Config(object):
     
     TG_MIN_FILE_SIZE = 2097152000
     
-    BOT_USERNAME = os.environ.get("BOT_USERNAME", "")
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", "@fbfastdown_bot")
                                   
