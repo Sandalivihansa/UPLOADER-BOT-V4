@@ -26,11 +26,11 @@
     },
     "API_ID": {
       "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "value": "5047271"
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "value": "047d9ed308172e637d4265e1d9ef0c27"
     },
     "DATABASE_URL": {
       "description": "Your Mongodb Url from mongodb.com",
