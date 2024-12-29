@@ -97,8 +97,9 @@ sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ
         ]]
     )
     
-# In your bot's handler function (assumes you're using Pyrogram):
+@app.on_message(filters.command("start"))
 async def start(client, message):
+    try:
     # Send image and text together
     await message.reply_photo(
         photo=Translation.START_IMAGE,
