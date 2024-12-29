@@ -22,3 +22,4 @@ pyromod==1.2
 flask
 gunicorn==20.1.0
 pyrogram==2.0.0
+asyncio
