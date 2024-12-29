@@ -97,7 +97,7 @@ sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ
         ]]
     )
     
-@app.on_message(filters.command("start"))
+@Client.on_message(filters.command("start"))
 async def start(client, message):
     try:
     # Send image and text together
