@@ -13,7 +13,7 @@
     "remote",
     "uploader"
   ],
-  "website": "https://t.me/UploadLinkToFileBot",
+  "website": "",
   "repository": "",
   "env": {
     "WEBHOOK": {
