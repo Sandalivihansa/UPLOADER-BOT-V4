@@ -60,7 +60,6 @@ sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ
 ⏳ Tɪᴍᴇ ʟᴇғᴛ : {4}\n\n
 """
 
-    START_IMAGE_URL = "https://telegra.ph/file/ee7d75a552dd22796807f.jpg"
     START_BUTTONS = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('⚙️ sᴇᴛᴛɪɴɢs', callback_data='OpenSettings')
