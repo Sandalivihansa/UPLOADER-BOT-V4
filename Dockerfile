@@ -9,12 +9,12 @@ RUN apt-get update && \
     apt-get install -y ffmpeg git wget pv jq python3-dev mediainfo && \
     rm -rf /var/lib/apt/lists/*
 
-# Install pip and upgrade it
+# Upgrade pip to the latest version
 RUN pip install --upgrade pip
 
 # Install the necessary Python packages
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --verbose
 
 # Force reinstall brotli
 RUN pip install --force-reinstall brotli
