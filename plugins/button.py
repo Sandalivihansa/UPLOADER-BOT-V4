@@ -6,7 +6,7 @@ import shutil
 import time
 import logging
 from datetime import datetime
-from pyrogram import enums
+from pyrogram import enums 
 from plugins.config import Config
 from plugins.script import Translation
 from plugins.thumbnail import *
@@ -21,9 +21,6 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-# Flag to track users that are being processed
-processing_users = {}
-
 def check_ffmpeg_installed():
     """Check if ffmpeg is installed on the system."""
     try:
@@ -33,22 +30,10 @@ def check_ffmpeg_installed():
         return False
 
 async def youtube_dl_call_back(bot, update):
-    user_id = update.from_user.id
-
-    # Prevent multiple responses for the same user
-    if user_id in processing_users and processing_users[user_id]:
-        await update.message.edit_caption(
-            caption="Error: You are already processing a request. Please wait until the current process finishes."
-        )
-        return False
-    
-    processing_users[user_id] = True  # Mark the user as processing
-
     if not check_ffmpeg_installed():
         await update.message.edit_caption(
             caption="Error: ffmpeg is not installed. Please install ffmpeg to download m3u8 streams."
         )
-        processing_users[user_id] = False  # Reset processing flag
         return False
 
     cb_data = update.data
@@ -63,7 +48,6 @@ async def youtube_dl_call_back(bot, update):
         await update.message.edit_caption(
             caption="Error: Download information not found. Please try again."
         )
-        processing_users[user_id] = False  # Reset processing flag
         return False
     
     try:
@@ -74,7 +58,6 @@ async def youtube_dl_call_back(bot, update):
         await update.message.edit_caption(
             caption="Error: Failed to process the download information. Please try again."
         )
-        processing_users[user_id] = False  # Reset processing flag
         return False
 
     youtube_dl_url = update.message.reply_to_message.text
@@ -182,7 +165,6 @@ async def youtube_dl_call_back(bot, update):
         await update.message.edit_caption(
             caption=f"Error: {e_response}"
         )
-        processing_users[user_id] = False  # Reset processing flag
         return False
     
     ad_string_to_replace = "**Invalid link !**"
@@ -191,7 +173,6 @@ async def youtube_dl_call_back(bot, update):
         await update.message.edit_caption(
             text=error_message
         )
-        processing_users[user_id] = False  # Reset processing flag
         return False
 
     if t_response:
@@ -215,7 +196,6 @@ async def youtube_dl_call_back(bot, update):
                 await update.message.edit_caption(
                     caption=Translation.DOWNLOAD_FAILED
                 )
-                processing_users[user_id] = False  # Reset processing flag
                 return False
         
         if file_size > Config.TG_MAX_FILE_SIZE:
@@ -306,5 +286,3 @@ async def youtube_dl_call_back(bot, update):
             
             logger.info(f"✅ Downloaded in: {time_taken_for_download} seconds")
             logger.info(f"✅ Uploaded in: {time_taken_for_upload} seconds")
-
-    processing_users[user_id] = False  # Reset processing flag
