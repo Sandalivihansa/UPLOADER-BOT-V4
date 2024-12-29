@@ -1,19 +1,15 @@
-# ©️ LISA-KOREA | @LISA_FAN_LK | NT_BOT_CHANNEL
-
 import subprocess
 import asyncio
 import json
-import math
 import os
 import shutil
 import time
+import logging
 from datetime import datetime
 from pyrogram import enums 
 from plugins.config import Config
 from plugins.script import Translation
 from plugins.thumbnail import *
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-from pyrogram.types import InputMediaPhoto
 from plugins.functions.display_progress import progress_for_pyrogram, humanbytes
 from plugins.database.database import db
 from PIL import Image
@@ -46,14 +42,24 @@ async def youtube_dl_call_back(bot, update):
     
     save_ytdl_json_path = os.path.join(Config.DOWNLOAD_LOCATION, f"{update.from_user.id}{ranom}.json")
     
+    # Improved error handling for missing JSON file
+    if not os.path.exists(save_ytdl_json_path):
+        logger.error(f"JSON file not found at {save_ytdl_json_path}")
+        await update.message.edit_caption(
+            caption="Error: Download information not found. Please try again."
+        )
+        return False
+    
     try:
         with open(save_ytdl_json_path, "r", encoding="utf8") as f:
             response_json = json.load(f)
-    except FileNotFoundError as e:
-        logger.error(f"JSON file not found: {e}")
-        await update.message.delete()
+    except json.JSONDecodeError as e:
+        logger.error(f"Failed to decode JSON file {save_ytdl_json_path}: {e}")
+        await update.message.edit_caption(
+            caption="Error: Failed to process the download information. Please try again."
+        )
         return False
-    
+
     youtube_dl_url = update.message.reply_to_message.text
     custom_file_name = f"{response_json.get('title')}_{youtube_dl_format}.{youtube_dl_ext}"
     youtube_dl_username = None
