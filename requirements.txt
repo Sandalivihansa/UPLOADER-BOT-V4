@@ -5,7 +5,7 @@ numpy==1.25.0
 Pillow==9.2.0
 pyrofork>=2.1.0
 requests==2.28.1
-tgcrypto==2.0.0
+tgcrypto==1.2.5
 yt-dlp==2024.12.27
 olefile==0.46
 motor==3.3.0
