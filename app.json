@@ -14,7 +14,7 @@
     "uploader"
   ],
   "website": "https://t.me/UploadLinkToFileBot",
-  "repository": "https://github.com/Sandalivihansa/UPLOADER-BOT-V4",
+  "repository": "",
   "env": {
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode",
