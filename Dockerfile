@@ -1,4 +1,3 @@
-# Use an official Python runtime as a parent image
 FROM python:3.10-slim
 
 # Set the working directory in the container
@@ -6,8 +5,11 @@ WORKDIR /app
 
 # Update the package list and install required packages
 RUN apt-get update && \
-    apt-get install -y ffmpeg git wget pv jq python3-dev mediainfo && \
+    apt-get install -y ffmpeg aria2 git wget pv jq python3-dev mediainfo && \
     rm -rf /var/lib/apt/lists/*
+
+# Install pip and upgrade it
+RUN pip install --upgrade pip
 
 # Install the necessary Python packages
 COPY requirements.txt .
