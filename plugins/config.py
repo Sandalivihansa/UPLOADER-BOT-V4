@@ -11,7 +11,7 @@ logging.basicConfig(
 
 class Config(object):
     
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7332398186:AAEXqQxzOTqyWY2NAfzRQ5l3HbVT3t5ace4")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7834660675:AAFFnOq4zat4HZhTfXGwg2h5NAO3o-QLp0g")
     
     API_ID = int(os.environ.get("API_ID", "5047271"))
     
