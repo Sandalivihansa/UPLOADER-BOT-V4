@@ -2,7 +2,6 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import RPCError
 
-
 class Translation:
     START_TEXT = """
 👋 Hᴇʏ {} 
@@ -112,5 +111,12 @@ async def button(client, callback_query):
     except RPCError as e:
         print(f"An error occurred: {e}")
 
-# Run the bot
-app.run()  # Ensure this is at the bottom to start the bot
+# Use an asynchronous function to start the bot in environments with an active event loop
+async def main():
+    await app.start()  # Use app.start() instead of app.run()
+    print("Bot is now running...")
+    await app.idle()  # Keeps the bot running until it is manually stopped
+
+# If running in a script, ensure you start the bot with an asyncio event loop
+import asyncio
+asyncio.run(main())
